@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:09:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/17 20:03:03 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/18 11:48:35 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	is_sorted(t_data *data)
 
 	i = 0;
 	ptr = data->head_l_stack_a;
-	while (ptr)
+	while (ptr->next)
 	{
 		if (ptr->data > ptr->next->data)
 			return (0);

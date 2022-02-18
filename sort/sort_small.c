@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:42:46 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/17 19:06:42 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/18 11:58:36 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	random_4(t_data *data, t_list **head)
 
 void	random_5(t_data *data, t_list **head)
 {
+	if (is_sorted(data))
+		return ;
 	push_smallest_number(data, head);
 	pb_operation(data);
 	random_4(data, head);
@@ -64,7 +66,7 @@ void	sort_small_numbers(t_data *data)
 {
 	if (data->sa_len == 2)
 	{
-		if (data->head_l_stack_a > data->head_l_stack_a->next)
+		if (data->head_l_stack_a->data > data->head_l_stack_a->next->data)
 			sa_operation(data, 1);
 	}
 	if (data->sa_len == 3)

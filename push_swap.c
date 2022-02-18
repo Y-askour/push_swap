@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 14:58:56 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/17 19:09:27 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/18 11:56:49 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -68,5 +68,8 @@ int	main(int argc, char **argv)
 	if (!arg_is_int(argv, argc - 1) || ft_check_dup(argv, argc - 1))
 		ft_error();
 	stacks(argv, argc - 1, &data);
-	sort_small_numbers(&data);
+	if (argc -1 <= 5 )
+		sort_small_numbers(&data);
+	else
+		sort_big_numbers(&data);
 }

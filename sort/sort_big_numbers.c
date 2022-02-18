@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/17 19:56:57 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/18 11:49:44 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	sort_big_numbers(t_data *data)
 {
+	if (is_sorted(data) == 1)
+		return ;
 	while (data->sa_len != 0)
 	{
 		push_smallest_number(data, &data->head_l_stack_a);
