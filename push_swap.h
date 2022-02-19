@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/17 18:58:21 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/18 13:10:58 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	sort_small_numbers(t_data *data);
 
 // sort utils
 int		find_smallest_number(t_data *data, t_list	**head);
+int		find_biggest_number(t_data *data, t_list	**head);
 void	push_smallest_number(t_data *data, t_list	**head);
 int		is_sorted(t_data *data);
 

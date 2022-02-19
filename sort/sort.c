@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:42:33 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/17 19:56:30 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/18 13:11:04 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -25,6 +25,29 @@ int	find_smallest_number(t_data *data, t_list	**head)
 		if (i == 0 || small > ptr->data)
 		{
 			small = ptr->data;
+			index = i;
+		}
+		i++;
+		ptr = ptr->next;
+	}
+	return (index);
+}
+
+
+int	find_biggest_number(t_data *data, t_list	**head)
+{
+	int		i;
+	int		big;
+	int		index;
+	t_list	*ptr;
+
+	i = 0;
+	ptr = *head;
+	while (ptr)
+	{
+		if (i == 0 || big < ptr->data)
+		{
+			big = ptr->data;
 			index = i;
 		}
 		i++;
