@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:45:01 by yaskour           #+#    #+#             */
-/*   Updated: 2021/11/09 20:06:53 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/19 17:02:33 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -32,7 +32,7 @@ static char	*ft_alloc(char *src, char c)
 	return (dest);
 }
 
-static size_t	count_words(char const *str, char c)
+size_t	count_words(char const *str, char c)
 {
 	size_t	words;
 

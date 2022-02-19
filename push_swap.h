@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/18 13:10:58 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/19 17:29:33 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,9 @@ int		find_smallest_number(t_data *data, t_list	**head);
 int		find_biggest_number(t_data *data, t_list	**head);
 void	push_smallest_number(t_data *data, t_list	**head);
 int		is_sorted(t_data *data);
+int check_one_arg(char *arg);
+size_t	count_words(char const *str, char c);
+int	ft_check_dup_one(char **argv, int len);
 
 // sort_big_numbers
 
