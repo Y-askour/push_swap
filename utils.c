@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:09:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/19 20:02:07 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/20 13:52:03 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int check_one_arg(char *arg)
 	while(nums[i])
 	{
 		j = 0;
-		if (nums[i][j] == '-' || nums[i][j] == '+')
+		if ((nums[i][j] == '-' && ft_isdigit(nums[i][j + 1])) || ( nums[i][j] == '+' && ft_isdigit(nums[i][j +1])))
 			j++;
 		while(nums[i][j])
 		{
