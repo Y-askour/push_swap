@@ -6,11 +6,47 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:42:33 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/19 20:02:10 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/20 15:36:16 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
+#include <stdio.h>
 
+int find_mid(t_data	*data)
+{
+	int	*arr;
+	t_list	*ptr;
+	int i;
+	int j;
+
+	arr = malloc(sizeof(int) * data->sa_len);
+	ptr = data->head_l_stack_a;
+	i =0;
+	while(ptr)
+	{
+		arr[i] = ptr->data;
+		ptr = ptr->next;
+		i++;
+	}
+	i = 0;
+	while(i < data->sa_len -1)
+	{
+		j = i + 1;
+		while(j < data->sa_len)
+		{
+			if (arr[i] > arr[j])
+			{
+				arr[i] ^= arr[j];
+				arr[j] ^= arr[i];
+				arr[i] ^= arr[j];
+			}
+			j++;
+		}
+		i++;
+	}
+	int mid = (data->sa_len -1)/2;
+	return (arr[mid]);
+}
 int	find_smallest_number(t_data *data, t_list	**head)
 {
 	int		i;

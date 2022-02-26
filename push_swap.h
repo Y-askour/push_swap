@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/19 17:29:33 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/26 18:04:07 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ typedef struct data
 	int		push_value;
 	t_list	*head_l_stack_a;
 	t_list	*head_l_stack_b;
+	int	lis_len;
 
 }	t_data;
 
+int find_mid(t_data	*data);
 // main functions
 
 void	stacks(char **stack, int stack_len, t_data *data);
@@ -95,4 +97,7 @@ int		l_by_index(t_list *head, int index);
 void	add_at_top(t_list	**head, t_list	*node);
 t_list	*copy_node(t_list	*node);
 void	deletenode(t_list	**head);
+void lis(int *arr,int *arr1,int len);
+int *tmp(t_data *data);
+int *push_lis(t_data *data);
 #endif

@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 14:58:56 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/19 20:02:01 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/26 18:59:05 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -96,7 +96,6 @@ void	print_stacks(t_data *data)
 	}
 }
 
-#include <stdio.h>
 int	main(int argc, char **argv)
 {
 	t_data	data;
@@ -105,8 +104,11 @@ int	main(int argc, char **argv)
 	else if ( argc > 2 && (!arg_is_int(argv, argc - 1) || ft_check_dup(argv, argc - 1)))
 		ft_error();
 	stacks(argv, argc - 1, &data);
-	if (argc - 1 <= 5)
+	if (data.sa_len <= 5)
 		sort_small_numbers(&data);
 	else
+	{
 		sort_big_numbers(&data);
+	}
+	//print_stacks(&data);
 }
