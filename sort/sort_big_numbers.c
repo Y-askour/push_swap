@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/26 19:19:56 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/27 15:39:36 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,36 @@ int	push_nonlis(t_data *data,int number,int *lis)
 void	sort_big_numbers(t_data *data)
 {
 	int *lis = push_lis(data);
-//	int i = 0;
-//	while(i < data->lis_len)
-//	{
-//		printf("%d\n",lis[i]);
-//		i++;
-//	}
+	//int i = 0;
+	//while(i < data->lis_len)
+	//{
+	//	printf("%d\n",lis[i]);
+	//	i++;
+	//}
 	t_list *ptr;
+	int i = 0;
 	ptr =data->head_l_stack_a;
+	int des;
 	while(ptr)
 	{
-		if (push_nonlis(data,ptr->data,lis))
+		if (!push_nonlis(data,ptr->data,lis))
 		{
-			printf("%d\t",ptr->data);
+			des = (data->sa_len - 1) - i;
+			if (des < i)
+			{
+				while(data->head_l_stack_a->data != ptr->data)
+					rra_operation(data,1);
+				pb_operation(data);
+			}
+			else
+			{
+				while(data->head_l_stack_a->data != ptr->data)
+					ra_operation(data,1);
+				pb_operation(data);
+			}
 		}
+		i++;
 		ptr = ptr->next;
 	}
-	//while (data->sa_len != 0)
-	//{
-	//	push_smallest_number(data, &data->head_l_stack_a);
-	//	pb_operation(data);
-	//}
-	//while (data->sb_len != 0)
-	//	pa_operation(data);
+	//print_stacks(data);
 }
