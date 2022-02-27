@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/26 18:04:07 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/27 17:25:54 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ typedef struct linkedlist
 	struct linkedlist	*next;
 }	t_list;
 
+typedef struct num_pos
+{
+	int a;
+	int b;
+}	t_pos;
+
 typedef struct data
 {
 	int		sa_len;
@@ -28,6 +34,7 @@ typedef struct data
 	t_list	*head_l_stack_a;
 	t_list	*head_l_stack_b;
 	int	lis_len;
+	t_pos *num_pos;
 
 }	t_data;
 
