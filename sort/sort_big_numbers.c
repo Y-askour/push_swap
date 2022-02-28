@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/27 18:54:18 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/28 18:21:08 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,29 @@ int	push_nonlis(t_data *data,int number,int *lis)
 	return (0);
 }
 
-void	stack_a_pos(t_data *data)
+void	stack_a_pos(t_data *data,int index,int number)
 {
-	// i need to loop for each number in b to find its place in a
-	// had code ghalt tayloopi 3la a
-	t_list	*ptr;
-	t_list	*ptr2;
-	ptr = data->head_l_stack_b;
-	
-	while(ptr)
+	int index_a[data->sa_len];
+	int i = 0;
+	int j;
+	int des;
+	while(i < data->sa_len)
 	{
-		printf("stack b %d\n---------------\n",ptr->data);
-		ptr2 = data->head_l_stack_a;
-		while(ptr2)
+		des = (data->sa_len - 1) - i;
+		if (des < i)
 		{
-			printf("stack a %d\n",ptr2->data);
-			ptr2 = ptr2->next;
+			j = i - data->sb_len;
+			index_a[i] = j;
 		}
-		printf("-----------------\n");
-		ptr = ptr->next;
+		else
+			index_a[i] = i;
+		i++;
+	}
+	i = 0;
+	while(i < data->sa_len)
+	{
+		printf("%d\n",index_a[i]);
+		i++;
 	}
 }
 
@@ -63,14 +67,25 @@ void	stack_b_pos(t_data *data)
 		{
 			j = i - data->sb_len;
 			data->num_pos[i].b = j;
+			stack_a_pos(data,i,ptr->data);
 			j++;
 		}
 		else
+		{
 			data->num_pos[i].b = i;
+			stack_a_pos(data,i,ptr->data);
+		}
 		ptr = ptr->next;
 		i++;
 	}
-	stack_a_pos(data);
+	ptr = data->head_l_stack_b;
+	i = 0;
+//	while(ptr)
+//	{
+//		printf("a = %d  b = %d\n",data->num_pos[i].a,data->num_pos[i].b);
+//		i++;
+//		ptr = ptr->next;
+//	}
 }
 
 void	sort_big_numbers(t_data *data)
@@ -103,5 +118,5 @@ void	sort_big_numbers(t_data *data)
 	}
 	if (data->sb_len)
 		stack_b_pos(data);
-	print_stacks(data);
+	//print_stacks(data);
 }

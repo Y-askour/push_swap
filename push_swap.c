@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 14:58:56 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/26 18:59:05 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/02/28 17:57:29 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -86,11 +86,11 @@ void	print_stacks(t_data *data)
 	{
 		if (i < data->sa_len)
 			ft_putnbr_fd(l_by_index(data->head_l_stack_a, i), 1);
-		ft_putstr_fd(" | ", 1);
+		ft_putstr_fd("            |", 1);
 		if (i < data->sb_len)
 			ft_putnbr_fd(l_by_index(data->head_l_stack_b, i), 1);
 		else
-			ft_putstr_fd(" ", 1);
+			ft_putstr_fd("", 1);
 		i++;
 		ft_putstr_fd("\n", 1);
 	}
