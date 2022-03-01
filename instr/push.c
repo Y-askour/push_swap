@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:30:36 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/27 16:10:55 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/01 20:02:22 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	pb_operation(t_data *data)
 		data->sa_len--;
 		data->sb_len++;
 	}
-	//ft_putendl_fd("pb", 1);
+	ft_putendl_fd("pb", 1);
 }
 
 void	pa_operation(t_data *data)
@@ -39,5 +39,5 @@ void	pa_operation(t_data *data)
 		data->sb_len--;
 		data->sa_len++;
 	}
-	//ft_putendl_fd("pa", 1);
+	ft_putendl_fd("pa", 1);
 }
