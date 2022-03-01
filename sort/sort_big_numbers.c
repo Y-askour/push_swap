@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 15:37:43 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/01 19:32:43 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/01 19:59:36 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,10 @@ void	stack_a_pos(t_data *data,int index,int number)
 		data->num_pos[index].a = 0;
 	while(ptr)
 	{
-		if (big < ptr->data)
+		if (big < number && big == i)
 		{
-			data->num_pos[index].a = big;
+			data->num_pos[index].a = index_a[i];
+			return ;
 		}
 		if (index_a[i] < 0)
 		{
