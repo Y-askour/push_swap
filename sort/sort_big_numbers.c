@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/02 17:17:12 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/02 19:25:37 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -128,18 +128,8 @@ void	sort_big_numbers(t_data *data)
 		if (!push_nonlis(data, ptr->data, lis))
 		{
 			des = (data->sa_len - 1) - i;
-			if (des < i)
-			{
-				while (data->head_l_stack_a->data != ptr->data)
-					rra_operation(data, 1);
-				pb_operation(data);
-			}
-			else
-			{
-				while (data->head_l_stack_a->data != ptr->data)
-					ra_operation(data, 1);
-				pb_operation(data);
-			}
+			sort_big_helper(data, des, i, ptr->data);
+			pb_operation(data);
 		}
 		i++;
 		ptr = ptr->next;

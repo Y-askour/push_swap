@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/02 19:08:27 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/02 19:24:22 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ int		*push_lis(t_data *data);
 int		check_one_arg_helper(int *i, int *j, char **nums);
 void	tmp_helper(t_list *ptr, int *i, int *tmp);
 void	helper2_tmp(t_data *data, int *j, int *i, int *tmp);
+void	sort_big_helper(t_data *data, int des, int i, int number);
 
 #endif

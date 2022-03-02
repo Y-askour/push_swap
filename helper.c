@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:54:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/02 18:41:44 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/02 19:24:42 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,19 @@ void	helper2_tmp(t_data *data, int *j, int *i, int *tmp)
 		ptr = ptr->next;
 		*j += 1;
 		*i += 1;
+	}
+}
+
+void	sort_big_helper(t_data *data, int des, int i, int number)
+{
+	if (des < i)
+	{
+		while (data->head_l_stack_a->data != number)
+			rra_operation(data, 1);
+	}
+	else
+	{
+		while (data->head_l_stack_a->data != number)
+			ra_operation(data, 1);
 	}
 }
