@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/01 20:15:28 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/02 17:17:12 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -27,10 +27,12 @@ int	push_nonlis(t_data *data, int number, int *lis)
 
 void	stack_a_pos(t_data *data, int index, int number)
 {
-	int	index_a[data->sa_len];
-	int	i;
-	int	j;
-	int	des;
+	int		index_a[data->sa_len];
+	int		i;
+	int		j;
+	int		des;
+	int		big;
+	t_list	*ptr;
 
 	i = 0;
 	while (i < data->sa_len)
@@ -46,12 +48,12 @@ void	stack_a_pos(t_data *data, int index, int number)
 		i++;
 	}
 	i = 0;
-	t_list *ptr;
 	ptr = data->head_l_stack_a;
-	int big  = find_biggest_number(data,&data->head_l_stack_a);
-	if (data->head_l_stack_a->data > number && number > l_by_index(data->head_l_stack_a,data->sa_len - 1))
+	big = find_biggest_number(data, &data->head_l_stack_a);
+	if (data->head_l_stack_a->data > number
+		&& number > l_by_index(data->head_l_stack_a, data->sa_len - 1))
 		data->num_pos[index].a = 0;
-	while(ptr)
+	while (ptr)
 	{
 		if (big < number && big == i)
 		{
@@ -60,7 +62,8 @@ void	stack_a_pos(t_data *data, int index, int number)
 		}
 		if (index_a[i] < 0)
 		{
-			if ( ptr->next != 0 && ptr->data < number && number  < ptr->next->data)
+			if (ptr->next != 0 && ptr->data < number
+				&& number < ptr->next->data)
 			{
 				data->num_pos[index].a = index_a[i];
 				return ;
@@ -90,7 +93,7 @@ void	stack_b_pos(t_data *data)
 	ptr = data->head_l_stack_b;
 	j = 0;
 	i = 0;
-	while(ptr)
+	while (ptr)
 	{
 		des = (data->sb_len - 1) - i;
 		if (des < i)

@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/27 17:25:54 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/02 18:39:55 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct data
 	t_list	*head_l_stack_b;
 	int	lis_len;
 	t_pos *num_pos;
+	int index;
 
 }	t_data;
 
@@ -107,4 +108,10 @@ void	deletenode(t_list	**head);
 void lis(int *arr,int *arr1,int len);
 int *tmp(t_data *data);
 int *push_lis(t_data *data);
+
+//helper functions
+int	check_one_arg_helper(int *i, int *j, char **nums);
+void	tmp_helper(t_list *ptr, int *i, int *tmp);
+void	helper2_tmp(t_data *data,int *j, int *i, int *tmp);
+
 #endif

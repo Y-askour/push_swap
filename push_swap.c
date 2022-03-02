@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 14:58:56 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/01 20:36:09 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/02 19:03:41 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -112,4 +112,13 @@ int	main(int argc, char **argv)
 	{
 		sort_big_numbers(&data);
 	}
+	//t_list *ptr = data.head_l_stack_b;
+	//int i = 0;
+	//while(ptr)
+	//{
+	//	printf("a = %d      b = %d\n",data.num_pos[i].a,data.num_pos[i].b);
+	//	i++;
+	//	ptr = ptr->next;
+	//}
+	//print_stacks(&data);
 }

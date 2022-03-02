@@ -6,10 +6,9 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 15:11:49 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/19 20:02:14 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/02 17:18:13 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
 void	deletenode(t_list	**head)
