@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/02 18:39:55 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/02 19:08:27 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct linkedlist
 
 typedef struct num_pos
 {
-	int a;
-	int b;
+	int	a;
+	int	b;
 }	t_pos;
 
 typedef struct data
@@ -33,15 +33,13 @@ typedef struct data
 	int		push_value;
 	t_list	*head_l_stack_a;
 	t_list	*head_l_stack_b;
-	int	lis_len;
-	t_pos *num_pos;
-	int index;
+	int		lis_len;
+	t_pos	*num_pos;
+	int		index;
 
 }	t_data;
 
-int find_mid(t_data	*data);
 // main functions
-
 void	stacks(char **stack, int stack_len, t_data *data);
 int		ft_check_dup(char **argv, int len);
 int		arg_is_int(char **argv, int len);
@@ -87,9 +85,9 @@ int		find_smallest_number(t_data *data, t_list	**head);
 int		find_biggest_number(t_data *data, t_list	**head);
 void	push_smallest_number(t_data *data, t_list	**head);
 int		is_sorted(t_data *data);
-int check_one_arg(char *arg);
+int		check_one_arg(char *arg);
 size_t	count_words(char const *str, char c);
-int	ft_check_dup_one(char **argv, int len);
+int		ft_check_dup_one(char **argv, int len);
 
 // sort_big_numbers
 
@@ -105,13 +103,13 @@ int		l_by_index(t_list *head, int index);
 void	add_at_top(t_list	**head, t_list	*node);
 t_list	*copy_node(t_list	*node);
 void	deletenode(t_list	**head);
-void lis(int *arr,int *arr1,int len);
-int *tmp(t_data *data);
-int *push_lis(t_data *data);
+void	lis(int *arr, int *arr1, int len);
+int		*tmp(t_data *data);
+int		*push_lis(t_data *data);
 
 //helper functions
-int	check_one_arg_helper(int *i, int *j, char **nums);
+int		check_one_arg_helper(int *i, int *j, char **nums);
 void	tmp_helper(t_list *ptr, int *i, int *tmp);
-void	helper2_tmp(t_data *data,int *j, int *i, int *tmp);
+void	helper2_tmp(t_data *data, int *j, int *i, int *tmp);
 
 #endif
