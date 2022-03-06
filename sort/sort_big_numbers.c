@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/04 18:46:53 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/06 19:11:32 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -31,25 +31,47 @@ void	stack_a_pos(t_data *data, int index, int number)
 	t_list	*ptr;
 	int		i;
 	int		j;
+	int		big;
 
 	if (data->head_l_stack_a->data > number
 		&& number > l_by_index(data->head_l_stack_a, data->sa_len - 1))
 		data->num_pos[index].a = 0;
 	ptr = data->head_l_stack_a;
-	j = - data->sa_len;
+	j = -data->sa_len;
 	i = 0;
+	big = find_biggest_number(data,&data->head_l_stack_a);
 	while (ptr)
 	{
 		if (i <= (data->sa_len - 1) / 2)
-			printf("i = %d\n",i);
+		{
+			if (big == i && number > l_by_index(data->head_l_stack_a,big))
+			{
+				printf("big ----> i = %d\n",i);
+				data->num_pos[index].a = i + 1;
+				i++;
+				j++;
+				ptr = ptr->next;
+				continue;
+			}
+			printf("i = %d\n", i);
+		}
 		else
-			printf("j = %d\n",j);
+		{
+			if (i == big && number > l_by_index(data->head_l_stack_a,big))
+			{
+				printf("big ----> j = %d\n",j);
+				data->num_pos[index].a = j +1;
+				i++;
+				j++;
+				ptr = ptr->next;
+				continue;
+			}
+			printf("j = %d\n", j);
+		}
 		j++;
 		i++;
 		ptr = ptr->next;
 	}
-	printf("------------------\n");
-	printf("des = %d\n",(data->sa_len -1) / 2);
 }
 
 void	stack_b_pos(t_data *data)
@@ -74,11 +96,12 @@ void	stack_b_pos(t_data *data)
 		}
 		else
 			data->num_pos[i].b = i;
-		data->num_pos[i].a = 1;
+		data->num_pos[i].a = 2000;
 		stack_a_pos(data, i, ptr->data);
 		ptr = ptr->next;
 		i++;
 	}
+	printf("------------------------------\n");
 	ptr = data->head_l_stack_b;
 	i = 0;
 	while (ptr)
