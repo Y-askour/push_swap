@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/04 17:36:55 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/14 16:07:54 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ typedef struct data
 	int		lis_len;
 	t_pos	*num_pos;
 	int		index;
+	int		big;
+	int		j;
 
 }	t_data;
 
@@ -112,6 +114,11 @@ int		check_one_arg_helper(int *i, int *j, char **nums);
 void	tmp_helper(t_list *ptr, int *i, int *tmp);
 void	helper2_tmp(t_data *data, int *j, int *i, int *tmp);
 void	sort_big_helper(t_data *data, int des, int i, int number);
-int		number_is_between(int a,int number,int b);
-
+int		number_is_between(int a, int number, int b);
+void	stack_a_helper(int number, t_data *data, int i, t_list *ptr);
+void	stack_a_helper_2(int number, t_data *data, int i, t_list *ptr);
+int		find_best_number(t_data	*data);
+void	stack_b_pos(t_data *data);
+void	stack_a_pos(t_data *data, int index, int number);
+void	sort_helper(t_data *data);
 #endif

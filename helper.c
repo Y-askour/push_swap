@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:54:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/04 17:38:05 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/09 19:51:41 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ void	sort_big_helper(t_data *data, int des, int i, int number)
 	}
 }
 
-int  number_is_between(int a,int number,int b)
+int	number_is_between(int a, int number, int b)
 {
 	if (a < number && number < b)
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }

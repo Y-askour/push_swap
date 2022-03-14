@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/06 19:11:32 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/14 17:34:57 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -30,45 +30,24 @@ void	stack_a_pos(t_data *data, int index, int number)
 {
 	t_list	*ptr;
 	int		i;
-	int		j;
 	int		big;
 
 	if (data->head_l_stack_a->data > number
 		&& number > l_by_index(data->head_l_stack_a, data->sa_len - 1))
 		data->num_pos[index].a = 0;
 	ptr = data->head_l_stack_a;
-	j = -data->sa_len;
+	data->j = -data->sa_len;
 	i = 0;
-	big = find_biggest_number(data,&data->head_l_stack_a);
+	big = find_biggest_number(data, &data->head_l_stack_a);
+	data->index = index;
+	data->big = big;
 	while (ptr)
 	{
-		if (i <= (data->sa_len - 1) / 2)
-		{
-			if (big == i && number > l_by_index(data->head_l_stack_a,big))
-			{
-				printf("big ----> i = %d\n",i);
-				data->num_pos[index].a = i + 1;
-				i++;
-				j++;
-				ptr = ptr->next;
-				continue;
-			}
-			printf("i = %d\n", i);
-		}
+		if (i < (data->sa_len - 1) / 2)
+			stack_a_helper(number, data, i, ptr);
 		else
-		{
-			if (i == big && number > l_by_index(data->head_l_stack_a,big))
-			{
-				printf("big ----> j = %d\n",j);
-				data->num_pos[index].a = j +1;
-				i++;
-				j++;
-				ptr = ptr->next;
-				continue;
-			}
-			printf("j = %d\n", j);
-		}
-		j++;
+			stack_a_helper_2(number, data, i, ptr);
+		data->j++;
 		i++;
 		ptr = ptr->next;
 	}
@@ -96,19 +75,9 @@ void	stack_b_pos(t_data *data)
 		}
 		else
 			data->num_pos[i].b = i;
-		data->num_pos[i].a = 2000;
 		stack_a_pos(data, i, ptr->data);
 		ptr = ptr->next;
 		i++;
-	}
-	printf("------------------------------\n");
-	ptr = data->head_l_stack_b;
-	i = 0;
-	while (ptr)
-	{
-		printf("a = %d , b = %d\n", data->num_pos[i].a, data->num_pos[i].b);
-		i++;
-		ptr = ptr->next;
 	}
 }
 
@@ -133,7 +102,8 @@ void	sort_big_numbers(t_data *data)
 		i++;
 		ptr = ptr->next;
 	}
-	if (data->sb_len)
-		stack_b_pos(data);
-	print_stacks(data);
+	sort_helper(data);
+	//if (data->sb_len)
+	//	stack_b_pos(data);
+	//find_best_number(data);
 }
