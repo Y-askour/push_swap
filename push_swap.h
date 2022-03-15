@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/14 16:07:54 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/15 19:33:48 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,6 @@ int		find_best_number(t_data	*data);
 void	stack_b_pos(t_data *data);
 void	stack_a_pos(t_data *data, int index, int number);
 void	sort_helper(t_data *data);
+int		max_int(char *num, char *compare);
+void	stack_helper(t_data *data, int stack_len, char	**stack);
 #endif

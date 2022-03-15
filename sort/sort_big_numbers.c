@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/14 17:34:57 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/15 19:15:58 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -103,7 +103,4 @@ void	sort_big_numbers(t_data *data)
 		ptr = ptr->next;
 	}
 	sort_helper(data);
-	//if (data->sb_len)
-	//	stack_b_pos(data);
-	//find_best_number(data);
 }

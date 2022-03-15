@@ -6,84 +6,172 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:57:06 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/14 17:45:02 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/15 19:33:31 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void push(t_data *data,int index)
+void	smart_rotate(int *a, int *b, t_data *data)
 {
-	int a;
-	int b;	
-	int i;
+	if (*a < 0 && *b < 0)
+	{
+		if (*a < *b)
+		{
+			while (*b < 0)
+			{
+				rrr_operation(data);
+				*b += 1;
+				*a += 1;
+			}
+			while (*a < 0)
+			{
+				rra_operation(data, 1);
+				*a += 1;
+			}
+			pa_operation(data);
+			return ;
+		}
+		else
+		{
+			while (*a < 0)
+			{
+				rrr_operation(data);
+				*b += 1;
+				*a += 1;
+			}
+			while (*b < 0)
+			{
+				rrb_operation(data, 1);
+				*b += 1;
+			}
+			pa_operation(data);
+			return ;
+		}
+	}
+	else if (*a > 0 && *b > 0)
+	{
+		if (*a > *b)
+		{
+			while (*b)
+			{
+				rr_operation(data);
+				*b -= 1;
+				*a -= 1;
+			}
+			while (*a)
+			{
+				ra_operation(data, 1);
+				*a -= 1;
+			}
+			pa_operation(data);
+			return ;
+		}
+		else
+		{
+			while (*a)
+			{
+				rr_operation(data);
+				*b -= 1;
+				*a -= 1;
+			}
+			while (*b)
+			{
+				rb_operation(data, 1);
+				*b -= 1;
+			}
+			pa_operation(data);
+			return ;
+		}
+	}
+}
+
+void	push(t_data *data, int index)
+{
+	int	a;
+	int	b;	
+	int	i;
 
 	a = data->num_pos[index].a;
 	b = data->num_pos[index].b;
-	//printf("a = %d b = %d\n",a,b);
-	if (a < 0)
-	{
-		while(a < 0)
-		{
-			rra_operation(data,1);
-			a++;
-		}
-	}
+	if ((a * b) > 0)
+		smart_rotate(&a, &b, data);
 	else
 	{
-		i = 0;
-		while(i < a)
+		if (a < 0)
 		{
-			ra_operation(data,1);
-			i++;
+			while (a < 0)
+			{
+				rra_operation(data, 1);
+				a++;
+			}
 		}
-	}
-	if (b < 0)
-	{
-		while(b < 0)
+		else
 		{
-			rrb_operation(data,1);
-			b++;
+			i = 0;
+			while (i < a)
+			{
+				ra_operation(data, 1);
+				i++;
+			}
 		}
-		pa_operation(data);
-	}
-	else
-	{
-		i = 0;
-		while(i < b)
+		if (b < 0)
 		{
-			rb_operation(data,1);
-			i++;
+			while (b < 0)
+			{
+				rrb_operation(data, 1);
+				b++;
+			}
+			pa_operation(data);
 		}
-		pa_operation(data);
-	}
-	// add a 
+		else
+		{
+			i = 0;
+			while (i < b)
+			{
+				rb_operation(data, 1);
+				i++;
+			}
+			pa_operation(data);
+		}
+	}	
 }
-void sort_helper(t_data *data)
+
+void	sort_helper(t_data *data)
 {
-	int i = 0;
-	//int j;
-	//t_list	*ptr;
-	while(data->sb_len)
+	int	i;
+	int	number;
+
+	i = 0;
+	while (data->sb_len)
 	{
-		//printf("-------------------- pos number -----------------\n");
 		stack_b_pos(data);
-		//ptr = data->head_l_stack_b;
-		//j = 0;
-		//while(ptr)
-		//{
-		//	printf("a = %d   b = %d\n",data->num_pos[j].a,data->num_pos[j].b);
-		//	j++;
-		//	ptr = ptr->next;
-		//}
-		//printf("----------------------------------------------------\n");
-		int number = find_best_number(data);
-		//printf("best number is %d\n",number);
-		push(data,number);
-		//printf("----------------------------------------------------\n");
+		number = find_best_number(data);
+		push(data, number);
 		free(data->num_pos);
 		i++;
-		//print_stacks(data);
+	}
+	push_smallest_number(data, &data->head_l_stack_a);
+}
+
+void	stack_helper(t_data *data, int stack_len, char	**stack)
+{
+	int	i;
+
+	i = 1;
+	if (stack_len > 0)
+	{
+		data->sa_len = stack_len;
+		data->sb_len = 0;
+		data->head_l_stack_a = malloc(sizeof(t_list));
+		data->head_l_stack_b = NULL;
+		data->head_l_stack_a->data = ft_atoi(stack[i]);
+		data->head_l_stack_a->next = NULL;
+		i++;
+		while (i <= stack_len)
+		{
+			add_at_end(data->head_l_stack_a, ft_atoi(stack[i]));
+			i++;
+		}
 	}
 }

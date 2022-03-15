@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 14:58:56 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/10 20:54:08 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/15 19:34:02 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -54,20 +54,7 @@ void	stacks(char **stack, int stack_len, t_data *data)
 	else
 	{
 		if (stack_len > 0)
-		{
-			data->sa_len = stack_len;
-			data->sb_len = 0;
-			data->head_l_stack_a = malloc(sizeof(t_list));
-			data->head_l_stack_b = NULL;
-			data->head_l_stack_a->data = ft_atoi(stack[i]);
-			data->head_l_stack_a->next = NULL;
-			i++;
-			while (i <= stack_len)
-			{
-				add_at_end(data->head_l_stack_a, ft_atoi(stack[i]));
-				i++;
-			}
-		}
+			stack_helper(data, stack_len, stack);
 	}
 }
 
