@@ -6,10 +6,9 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:57:06 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/15 19:33:31 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/16 22:31:03 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
 void	smart_rotate(int *a, int *b, t_data *data)
@@ -18,34 +17,12 @@ void	smart_rotate(int *a, int *b, t_data *data)
 	{
 		if (*a < *b)
 		{
-			while (*b < 0)
-			{
-				rrr_operation(data);
-				*b += 1;
-				*a += 1;
-			}
-			while (*a < 0)
-			{
-				rra_operation(data, 1);
-				*a += 1;
-			}
-			pa_operation(data);
+			smart_rotate_helper(data, a, b);
 			return ;
 		}
 		else
 		{
-			while (*a < 0)
-			{
-				rrr_operation(data);
-				*b += 1;
-				*a += 1;
-			}
-			while (*b < 0)
-			{
-				rrb_operation(data, 1);
-				*b += 1;
-			}
-			pa_operation(data);
+			smart_rotate_helper2(data, a, b);
 			return ;
 		}
 	}
@@ -98,42 +75,8 @@ void	push(t_data *data, int index)
 		smart_rotate(&a, &b, data);
 	else
 	{
-		if (a < 0)
-		{
-			while (a < 0)
-			{
-				rra_operation(data, 1);
-				a++;
-			}
-		}
-		else
-		{
-			i = 0;
-			while (i < a)
-			{
-				ra_operation(data, 1);
-				i++;
-			}
-		}
-		if (b < 0)
-		{
-			while (b < 0)
-			{
-				rrb_operation(data, 1);
-				b++;
-			}
-			pa_operation(data);
-		}
-		else
-		{
-			i = 0;
-			while (i < b)
-			{
-				rb_operation(data, 1);
-				i++;
-			}
-			pa_operation(data);
-		}
+		push_helper2(data, &i, &a);
+		push_helper(data, &i, &b);
 	}	
 }
 
@@ -173,5 +116,22 @@ void	stack_helper(t_data *data, int stack_len, char	**stack)
 			add_at_end(data->head_l_stack_a, ft_atoi(stack[i]));
 			i++;
 		}
+	}
+}
+
+void	stack_helper2(t_data *data, char **nums)
+{
+	int	i;
+
+	i = 0;
+	data->head_l_stack_a = malloc(sizeof(t_list));
+	data->head_l_stack_b = NULL;
+	data->head_l_stack_a->data = ft_atoi(nums[i]);
+	data->head_l_stack_a->next = NULL;
+	i++;
+	while (nums[i])
+	{
+		add_at_end(data->head_l_stack_a, ft_atoi(nums[i]));
+		i++;
 	}
 }

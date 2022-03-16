@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/15 19:33:48 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/16 22:30:22 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,9 @@ void	stack_a_pos(t_data *data, int index, int number);
 void	sort_helper(t_data *data);
 int		max_int(char *num, char *compare);
 void	stack_helper(t_data *data, int stack_len, char	**stack);
+void	stack_helper2(t_data *data, char **nums);
+void	push_helper(t_data *data, int *i, int *b);
+void	push_helper2(t_data *data, int *i, int *a);
+void	smart_rotate_helper(t_data *data, int *a, int *b);
+void	smart_rotate_helper2(t_data *data, int *a, int *b);
 #endif
