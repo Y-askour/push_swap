@@ -6,12 +6,11 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:52:34 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/15 19:15:08 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/16 23:29:21 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	stack_a_helper(int number, t_data *data, int i, t_list *ptr)
 {
@@ -67,24 +66,4 @@ int	find_best_number(t_data	*data)
 		i++;
 	}
 	return (index);
-}
-
-int	max_int(char *num, char *compare)
-{
-	int	i;
-
-	i = 0;
-	if (ft_strlen(num) == ft_strlen(compare))
-	{
-		while (i < ft_strlen(compare) - 1)
-		{
-			if (num[i] == compare[i])
-				i++;
-		}
-		if (num[i] != compare[i])
-			return (1);
-	}
-	if (ft_strlen(compare) < ft_strlen(num))
-		return (1);
-	return (0);
 }

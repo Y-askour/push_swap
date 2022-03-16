@@ -6,11 +6,10 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 14:58:56 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/16 22:42:13 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/16 23:29:43 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-#include <stdio.h>
 
 int	check_argv1(char *argv1)
 {
@@ -78,7 +77,7 @@ void	print_stacks(t_data *data)
 int	main(int argc, char **argv)
 {
 	t_data	data;
-	// check int max errors
+
 	if (argc == 2 && !check_one_arg(argv[1]))
 		ft_error();
 	else if (argc > 2 && (!arg_is_int(argv, argc - 1)

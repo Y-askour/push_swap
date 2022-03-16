@@ -6,12 +6,11 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:09:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/15 19:22:30 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/16 23:29:54 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	ft_check_dup_one(char **argv, int len)
 {
@@ -47,8 +46,6 @@ int	check_one_arg(char *arg)
 	while (nums[i])
 	{
 		j = 0;
-		if (max_int(nums[i], "-2147483648") || max_int(nums[i], "2147483647"))
-			return (0);
 		if ((nums[i][j] == '-' && ft_isdigit(nums[i][j + 1]))
 			|| (nums[i][j] == '+' && ft_isdigit(nums[i][j + 1])))
 			j++;
