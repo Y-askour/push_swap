@@ -6,11 +6,11 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:29:18 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/17 18:59:34 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/17 00:20:51 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	sa_operation(t_data *data, int check)
 {

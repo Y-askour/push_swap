@@ -6,11 +6,11 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:42:46 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/01 20:03:01 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/17 00:22:04 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	random_3(t_data *data, t_list **head)
 {

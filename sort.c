@@ -6,13 +6,12 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:42:33 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/01 20:04:18 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/17 00:21:53 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../push_swap.h"
-#include <stdio.h>
+#include "push_swap.h"
 
-int	find_smallest_number(t_data *data, t_list	**head)
+int	find_smallest_number(t_list	**head)
 {
 	int		i;
 	int		small;
@@ -34,7 +33,7 @@ int	find_smallest_number(t_data *data, t_list	**head)
 	return (index);
 }
 
-int	find_biggest_number(t_data *data, t_list	**head)
+int	find_biggest_number(t_list	**head)
 {
 	int		i;
 	int		big;
@@ -62,7 +61,7 @@ void	push_smallest_number(t_data *data, t_list	**head)
 	int	small;
 	int	des;
 
-	index = find_smallest_number(data, head);
+	index = find_smallest_number(head);
 	small = l_by_index(*head, index);
 	des = (data->sa_len - 1) - index;
 	if (des < index)

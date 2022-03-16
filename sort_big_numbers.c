@@ -6,11 +6,10 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/15 19:15:58 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/17 00:21:06 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../push_swap.h"
-#include <stdio.h>
+#include "push_swap.h"
 
 int	push_nonlis(t_data *data, int number, int *lis)
 {
@@ -38,7 +37,7 @@ void	stack_a_pos(t_data *data, int index, int number)
 	ptr = data->head_l_stack_a;
 	data->j = -data->sa_len;
 	i = 0;
-	big = find_biggest_number(data, &data->head_l_stack_a);
+	big = find_biggest_number(&data->head_l_stack_a);
 	data->index = index;
 	data->big = big;
 	while (ptr)

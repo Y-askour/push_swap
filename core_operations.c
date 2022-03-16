@@ -6,13 +6,13 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:43:21 by yaskour           #+#    #+#             */
-/*   Updated: 2022/02/17 19:12:06 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/17 00:19:09 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-void	rotate_core(t_list	**head, int len)
+void	rotate_core(t_list	**head)
 {
 	t_list	*ptr;
 
@@ -26,7 +26,7 @@ void	rotate_core(t_list	**head, int len)
 	ptr->next->next = 0;
 }
 
-void	r_rotate_core(t_list **head, int len)
+void	r_rotate_core(t_list **head)
 {
 	t_list	*ptr;
 

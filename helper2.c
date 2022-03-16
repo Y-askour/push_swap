@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 19:52:34 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/16 23:29:21 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/17 00:15:22 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	find_best_number(t_data	*data)
 	tmp = 0;
 	index = 0;
 	best_number = l_by_index(data->head_l_stack_b,
-			find_biggest_number(data, &data->head_l_stack_b));
+			find_biggest_number(&data->head_l_stack_b));
 	while (ptr)
 	{
 		find_best_number_helper(i, &tmp, data);

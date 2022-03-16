@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:45:22 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/02 19:02:12 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/17 00:14:05 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -19,7 +19,7 @@ int	*tmp(t_data *data)
 	int		j;
 
 	tmp = malloc(sizeof(int) * data->sa_len);
-	data->index = find_smallest_number(data, &data->head_l_stack_a);
+	data->index = find_smallest_number(&data->head_l_stack_a);
 	i = 0;
 	ptr = data->head_l_stack_a;
 	while (i != data->index)
