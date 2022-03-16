@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:36:40 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/16 22:30:11 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/16 22:35:25 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,22 @@ void	smart_rotate_helper2(t_data *data, int *a, int *b)
 	{
 		rrb_operation(data, 1);
 		*b += 1;
+	}
+	pa_operation(data);
+}
+
+void	smart_rotate3(t_data *data, int *a, int *b)
+{
+	while (*b)
+	{
+		rr_operation(data);
+		*b -= 1;
+		*a -= 1;
+	}
+	while (*a)
+	{
+		ra_operation(data, 1);
+		*a -= 1;
 	}
 	pa_operation(data);
 }

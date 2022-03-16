@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:57:06 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/16 22:31:03 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/16 22:47:15 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -16,50 +16,18 @@ void	smart_rotate(int *a, int *b, t_data *data)
 	if (*a < 0 && *b < 0)
 	{
 		if (*a < *b)
-		{
 			smart_rotate_helper(data, a, b);
-			return ;
-		}
 		else
-		{
 			smart_rotate_helper2(data, a, b);
-			return ;
-		}
+		return ;
 	}
 	else if (*a > 0 && *b > 0)
 	{
 		if (*a > *b)
-		{
-			while (*b)
-			{
-				rr_operation(data);
-				*b -= 1;
-				*a -= 1;
-			}
-			while (*a)
-			{
-				ra_operation(data, 1);
-				*a -= 1;
-			}
-			pa_operation(data);
-			return ;
-		}
+			smart_rotate3(data, a, b);
 		else
-		{
-			while (*a)
-			{
-				rr_operation(data);
-				*b -= 1;
-				*a -= 1;
-			}
-			while (*b)
-			{
-				rb_operation(data, 1);
-				*b -= 1;
-			}
-			pa_operation(data);
-			return ;
-		}
+			smart_rotate_helper4(data, a, b);
+		return ;
 	}
 }
 

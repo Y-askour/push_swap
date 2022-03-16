@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/16 22:30:22 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/16 22:46:09 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,4 +128,6 @@ void	push_helper(t_data *data, int *i, int *b);
 void	push_helper2(t_data *data, int *i, int *a);
 void	smart_rotate_helper(t_data *data, int *a, int *b);
 void	smart_rotate_helper2(t_data *data, int *a, int *b);
+void	smart_rotate3(t_data *data, int *a, int *b);
+void	smart_rotate_helper4(t_data *data, int *a, int *b);
 #endif
