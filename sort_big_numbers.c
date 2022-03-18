@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:20:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/18 16:40:52 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/18 19:01:33 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -97,5 +97,6 @@ void	sort_big_numbers(t_data *data)
 			ra_operation(data, 1);
 		i++;
 	}
+	free(lis);
 	sort_helper(data);
 }
