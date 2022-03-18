@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:10:01 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/17 00:25:01 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/18 16:40:33 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,6 @@ int		find_smallest_number(t_list	**head);
 int		find_biggest_number(t_list	**head);
 void	push_smallest_number(t_data *data, t_list	**head);
 int		is_sorted(t_data *data);
-int		check_one_arg(char *arg);
-size_t	count_words(char const *str, char c);
-int		ft_check_dup_one(char **argv, int len);
 
 // sort_big_numbers
 
@@ -110,11 +107,8 @@ int		*tmp(t_data *data);
 int		*push_lis(t_data *data);
 
 //helper functions
-int		check_one_arg_helper(int *i, int *j, char **nums);
 void	tmp_helper(t_list *ptr, int *i, int *tmp);
 void	helper2_tmp(t_data *data, int *j, int *i, int *tmp);
-void	sort_big_helper(t_data *data, int des, int i, int number);
-int		number_is_between(int a, int number, int b);
 void	stack_a_helper(int number, t_data *data, int i, t_list *ptr);
 void	stack_a_helper_2(int number, t_data *data, int i, t_list *ptr);
 int		find_best_number(t_data	*data);
@@ -123,7 +117,6 @@ void	stack_a_pos(t_data *data, int index, int number);
 void	sort_helper(t_data *data);
 int		max_int(char *num, char *compare);
 void	stack_helper(t_data *data, int stack_len, char	**stack);
-void	stack_helper2(t_data *data, char **nums);
 void	push_helper(t_data *data, int *i, int *b);
 void	push_helper2(t_data *data, int *i, int *a);
 void	smart_rotate_helper(t_data *data, int *a, int *b);
