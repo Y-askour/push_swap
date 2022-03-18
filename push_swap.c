@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 14:58:56 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/18 19:05:41 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/18 19:37:53 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -60,4 +60,5 @@ int	main(int argc, char **argv)
 		sort_small_numbers(&data);
 	else
 		sort_big_numbers(&data);
+	print_stacks(&data);
 }
