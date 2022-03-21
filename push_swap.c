@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 14:58:56 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/18 19:37:53 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:23:42 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -24,7 +24,7 @@ void	stacks(char **stack, int stack_len, t_data *data)
 
 void	ft_error(void)
 {
-	ft_putendl_fd("error", 1);
+	ft_putendl_fd("Error", 1);
 	exit(1);
 }
 
@@ -60,5 +60,4 @@ int	main(int argc, char **argv)
 		sort_small_numbers(&data);
 	else
 		sort_big_numbers(&data);
-	print_stacks(&data);
 }

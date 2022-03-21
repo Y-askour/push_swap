@@ -6,31 +6,44 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:09:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/18 19:37:51 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:26:12 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
- // and here
-int check_max_min(char *number,char *max,char *min)
+
+int	check_max_min(char *number, char *max, char *min)
 {
-	printf("\n-----------\n");
+	char	*num;
+
 	if (number[0] == '-')
 	{
 		if (ft_strlen(number) > 11)
 			return (1);
-		printf("number %s\n",number);
-		printf("min    %s\n",min);
+		num = ft_itoa(ft_atoi(number));
+		if (ft_strncmp(num, number, ft_strlen(min)))
+			return (1);
 	}
 	else
 	{
 		if (ft_strlen(number) > 10)
 			return (1);
-		printf("number %s\n",number);
-		printf("max    %s\n",max);
+		num = ft_itoa(ft_atoi(number));
+		if (ft_strncmp(num, number, ft_strlen(max)))
+			return (1);
 	}
 	return (0);
+}
+
+int	arg_is_int_helper(char **argv, int *j, int *i)
+{
+	while (argv[*i][*j])
+	{
+		if (!ft_isdigit(argv[*i][*j]))
+			return (0);
+		*j += 1;
+	}
+	return (1);
 }
 
 int	arg_is_int(char **argv, int len)
@@ -45,20 +58,15 @@ int	arg_is_int(char **argv, int len)
 	while (i <= len)
 	{
 		j = 0;
-		// check here
-		if (check_max_min(argv[i],"2147483647","-2147483648"))
+		if (check_max_min(argv[i], "2147483647", "-2147483648"))
 			return (0);
 		if ((argv[i][j] == '-' && ft_isdigit(argv[i][j + 1]))
 			|| (argv[i][j] == '+' && ft_isdigit(argv[i][j + 1])))
 			j++;
 		else
 		{
-			while (argv[i][j])
-			{
-				if (!ft_isdigit(argv[i][j]))
-					return (0);
-				j++;
-			}
+			if (!arg_is_int_helper(argv, &j, &i))
+				return (0);
 		}
 		i++;
 	}
