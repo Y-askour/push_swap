@@ -6,7 +6,7 @@
 /*   By: yaskour <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:09:55 by yaskour           #+#    #+#             */
-/*   Updated: 2022/03/21 17:26:12 by yaskour          ###   ########.fr       */
+/*   Updated: 2022/03/21 18:51:14 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	check_max_min(char *number, char *max, char *min)
 		if (ft_strncmp(num, number, ft_strlen(max)))
 			return (1);
 	}
+	free(num);
 	return (0);
 }
 
