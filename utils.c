@@ -11,28 +11,34 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	check_max_min(char *number, char *max, char *min)
 {
 	char	*num;
 
-	if (number[0] == '-')
+	if (ft_strlen(number) >= 10)
 	{
-		if (ft_strlen(number) > 11)
-			return (1);
-		num = ft_itoa(ft_atoi(number));
-		if (ft_strncmp(num, number, ft_strlen(min)))
-			return (1);
+		if (number[0] == '-' && ft_strlen(number) >= 11)
+		{
+			num = ft_itoa(ft_atoi(number));
+			if (ft_strncmp(num, number, ft_strlen(min)))
+				return (1);
+		}
+		if (number[0] == '+' && ft_strlen(number) >= 11)
+		{
+			num = ft_itoa(ft_atoi(number));
+			if (ft_strncmp(num, &number[1], 11))
+				return (1);
+		}
+		else if (ft_strlen(number) >= 10)
+		{
+			num = ft_itoa(ft_atoi(number));
+			if (ft_strncmp(num, number, ft_strlen(max)))
+				return (1);
+		}
+		free(num);
 	}
-	else
-	{
-		if (ft_strlen(number) > 10)
-			return (1);
-		num = ft_itoa(ft_atoi(number));
-		if (ft_strncmp(num, number, ft_strlen(max)))
-			return (1);
-	}
-	free(num);
 	return (0);
 }
 
