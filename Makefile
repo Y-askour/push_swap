@@ -1,5 +1,6 @@
 CC= gcc
 NAME=push_swap
+BNAME=checker
 FLAGS= -Wall -Wextra -Werror
 SRCS=helper.c\
 	 helper2.c\
@@ -19,8 +20,21 @@ SRCS=helper.c\
 	 sort_big_numbers.c\
 	 sort_small.c
 
+BONUS_SRC = checker.c\
+		open_prompt.c\
+		get_next_line.c\
+		checker_error_help.c\
+		instr.c\
+		instr2.c\
+		instr3.c\
+		linked.c\
+		check_error.c\
+		ft_split.c\
+
 OBJS=$(SRCS:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 INCL= push_swap.h
+INCLB=header.h
 
 GREY=$'\x1b[30m
 GREEN=$'\x1b[32m
@@ -39,6 +53,11 @@ $(NAME):$(OBJS)
 	mv ./libft/libft.a .
 	$(CC) $(FLAGS) $(OBJS) libft.a -o $(NAME)
 
+$(BNAME):$(BONUS_OBJ) 
+	$(CC) $(CFLAGS) $(BONUS_OBJ) -o $(BNAME) -g
+
+bonus : $(BNAME)
+
 clean:
 	rm -rf *.o
 	rm -rf ./libft/*.o
@@ -46,6 +65,7 @@ clean:
 fclean:clean
 	rm -rf *.a
 	rm -rf push_swap
+	rm -rf checker
 
 .PHONY: all gnl utils bonus clean fclean re
 
