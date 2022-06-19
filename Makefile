@@ -30,6 +30,7 @@ BONUS_SRC = checker.c\
 		linked.c\
 		check_error.c\
 		ft_split.c\
+		ft_strlen.c
 
 OBJS=$(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
@@ -54,7 +55,7 @@ $(NAME):$(OBJS)
 	$(CC) $(FLAGS) $(OBJS) libft.a -o $(NAME)
 
 $(BNAME):$(BONUS_OBJ) 
-	$(CC) $(CFLAGS) $(BONUS_OBJ) -o $(BNAME) -g
+	$(CC) $(CFLAGS) $(BONUS_OBJ) -o $(BNAME)
 
 bonus : $(BNAME)
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_error_help.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yaskour <yaskour@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/19 17:14:19 by yaskour           #+#    #+#             */
+/*   Updated: 2022/06/19 17:14:21 by yaskour          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -46,7 +58,6 @@ static int	ft_max_min(int c, char *p)
 	}
 	return (0);
 }
-
 
 static int	get_len(int num)
 {

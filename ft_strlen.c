@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaskour <yaskour@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/19 17:12:28 by yaskour           #+#    #+#             */
-/*   Updated: 2022/06/19 17:12:43 by yaskour          ###   ########.fr       */
+/*   Created: 2022/06/19 17:23:01 by yaskour           #+#    #+#             */
+/*   Updated: 2022/06/19 17:23:02 by yaskour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <stddef.h>
-# include <unistd.h>
-# define BUFFER_SIZE 2
+#include "header.h"
 
-size_t	ft_strlen(const char *s);
+size_t	ft_strlen(const char *s)
+{
+	int	i;
 
-char	*get_next_line(int fd);
-
-#endif
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
