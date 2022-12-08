@@ -5,7 +5,7 @@ To build and run the project, you will need to have the GNU Compiler Collection 
 To run push_swap, you will need to provide a list of integers as command line arguments. For example, to sort the list 3 2 1, you can run the following command:
 
 ./push_swap 3 2 1
-![push_swap](push.png)
+![push_swap](push_swap.png)
 
 This will generate a list of instructions for sorting the given list of numbers. The instructions will be printed to the standard output, and they can be used with the checker program to verify their correctness.
 
