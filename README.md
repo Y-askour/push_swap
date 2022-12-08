@@ -1,27 +1,21 @@
-# Push_swap
+Push_swap is a project that implements a set of algorithms for sorting a list of integers using a limited set of operations. The project includes two programs: push_swap, which generates a list of instructions for sorting a given list of numbers, and checker, which can be used to verify the correctness of the generated instructions.
 
-## Introduction:
-The Push_swap project is a very simple and highly effective algorithm project: data will
-need to be sorted. You have at your disposal a set of int values, 2 stacks and a set of
-instructions to manipulate both stacks.
+To build and run the project, you will need to have the GNU Compiler Collection (GCC) installed on your system. Once you have installed GCC, you can clone the project repository and use the provided Makefile to build the push_swap and checker programs.
 
-## Objectives:
-To write a sorting algorithm is always a very important step in a coder’s life, because it
-is often the first encounter with the concept of complexity.
-Sorting algorithms, and their complexities are part of the classic questions discussed
-during job interviews. It’s probably a good time to look at these concepts because you’ll
-have to face them at one point.
+To run push_swap, you will need to provide a list of integers as command line arguments. For example, to sort the list 3 2 1, you can run the following command:
 
-The learning objectives of this project are rigor, use of C and use of basic algorithms.
-Especially looking at the complexity of these basic algorithms.
-Sorting values is simple. To sort them the fastest way possible is less simple, especially
-because from one integers configuration to another, the most efficient sorting algorithm
-can differ.
+./push_swap 3 2 1
+![push_swap](push.png)
 
-### Constraints:
-Within your mandatory part you are allowed to use the following functions:
-◦ write
-◦ read
-◦ malloc
-◦ free
-◦ exit
+This will generate a list of instructions for sorting the given list of numbers. The instructions will be printed to the standard output, and they can be used with the checker program to verify their correctness.
+
+To run checker, you can use the -v option to enable visual mode, which will display the state of the list after each instruction is executed. You can also use the -c option to enable color output, which will highlight the instructions and their effects in different colors.
+
+To use the generated instructions with checker, you can provide them as command line arguments, followed by the original list of numbers. For example, to verify the instructions generated in the previous example, you can run the following command:
+
+./checker 3 2 1 sa
+![push_swap](checker.png)
+
+This will execute the sa instruction, which swaps the top two elements of the list, and it will print the resulting list to the standard output. If the instructions are correct and the list is fully sorted, checker will print OK to the standard output. Otherwise, it will print KO to indicate that the instructions are incorrect.
+
+Overall, Push_swap is a well-implemented project that provides a useful set of algorithms for sorting lists of numbers using a limited set of operations. The project is well-documented and easy to build and run, making it a valuable resource for anyone interested in learning more about sorting algorithms or implementing a similar program.
