@@ -4,7 +4,6 @@ To build and run the project, you will need to have the GNU Compiler Collection 
 
 To run push_swap, you will need to provide a list of integers as command line arguments. For example, to sort the list 3 2 1, you can run the following command:
 
-./push_swap 3 2 1
 ![push_swap](push_swap.png)
 
 This will generate a list of instructions for sorting the given list of numbers. The instructions will be printed to the standard output, and they can be used with the checker program to verify their correctness.
@@ -13,7 +12,7 @@ To run checker, you can use the -v option to enable visual mode, which will disp
 
 To use the generated instructions with checker, you can provide them as command line arguments, followed by the original list of numbers. For example, to verify the instructions generated in the previous example, you can run the following command:
 
-./checker 3 2 1 sa
+
 ![push_swap](checker.png)
 
 This will execute the sa instruction, which swaps the top two elements of the list, and it will print the resulting list to the standard output. If the instructions are correct and the list is fully sorted, checker will print OK to the standard output. Otherwise, it will print KO to indicate that the instructions are incorrect.
